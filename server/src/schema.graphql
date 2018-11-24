@@ -1,0 +1,9 @@
+type Query {
+  info: String!,
+  weatherApi: Weather!
+}
+
+type Weather {
+  summary: String
+  temperature: Float
+}
