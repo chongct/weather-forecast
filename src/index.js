@@ -8,7 +8,9 @@ import { createHttpLink } from 'apollo-link-http'
 import { ApolloClient } from 'apollo-client'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloProvider } from 'react-apollo'
-import gql from 'graphql-tag'
+// import gql from 'graphql-tag'
+
+import 'bootstrap/dist/css/bootstrap.css'
 
 const httpLink = new createHttpLink({
   uri: 'http://localhost:4000'
@@ -19,16 +21,16 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-client.query({
-  query: gql`
-    {
-      weatherApi {
-        summary
-        temperature
-      }
-    }
-  `
-}).then(response => console.log(response))
+// client.query({
+//   query: gql`
+//     {
+//       weatherApi {
+//         summary
+//         temperature
+//       }
+//     }
+//   `
+// }).then(response => console.log(response))
 
 ReactDOM.render(
   <ApolloProvider client={client}>

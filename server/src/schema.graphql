@@ -1,6 +1,6 @@
 type Query {
-  info: String!,
-  weatherApi: Weather!
+  info: String!
+  apiQuery(field: String!): Weather!
 }
 
 type Weather {

@@ -4,11 +4,11 @@ require('dotenv').config()
 const { GraphQLServer } = require('graphql-yoga')
 const Query = require('./resolvers/Query')
 
-const typeDefs = `
-type Query {
-  info: String!
-}
-`
+// const typeDefs = `
+// type Query {
+//   info: String!
+// }
+// `
 
 const resolvers = {
   Query
