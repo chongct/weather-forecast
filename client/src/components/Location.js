@@ -21,7 +21,6 @@ class Location extends Component {
       </div>
     );
   }
-
 }
 
 export default Location;

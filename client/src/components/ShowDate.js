@@ -25,7 +25,7 @@ class ShowDate extends Component {
 
   render() {
     return (
-      <div>{ this.state.dayOfWeek } { this.state.date } { this.state.month }</div>
+      <div class="test-date">{ this.state.dayOfWeek } { this.state.date } { this.state.month }</div>
     );
   }
 

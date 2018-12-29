@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import logo from '../styles/logo.svg';
-import '../styles/App.css';
+import '../styles/App.scss';
 
 import gql from 'graphql-tag'
 // import { Query } from 'react-apollo'
@@ -15,8 +15,17 @@ import Weather from './Weather'
 const API_QUERY = gql`
   query ApiQuery($field: String!) {
     apiQuery(field: $field) {
-      summary
-      temperature
+      result {
+        time
+        summary
+        temperature
+      }
+      forecast {
+        time
+        summary
+        temperatureMin
+        temperatureMax
+      }
     }
   }
 `

@@ -7,6 +7,7 @@
     "start": "node src/index.js"
   },
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.4.1",
     "dotenv": "^6.1.0",
     "graphql-yoga": "^1.16.7",
     "isomorphic-fetch": "^2.2.1"

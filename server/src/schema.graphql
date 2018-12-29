@@ -1,9 +1,22 @@
 type Query {
   info: String!
-  apiQuery(field: String!): Weather!
+  apiQuery(field: String!): WeatherResult!
+}
+
+type WeatherResult {
+  result: Weather
+  forecast: [WeatherForecast]
 }
 
 type Weather {
-  summary: String
-  temperature: Float
+  time: Int!
+  summary: String!
+  temperature: Float!
+}
+
+type WeatherForecast {
+  time: Int!
+  summary: String!
+  temperatureMin: Float!
+  temperatureMax: Float!
 }

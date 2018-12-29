@@ -14,10 +14,25 @@ async function apiQuery(parent, args, ctx, info) {
   const API_URL = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${lat},${lng}?units=si`
   const response = await fetch(API_URL)
   const result = await response.json()
-  console.log(result)
+  // console.log(result)
+
+  let weatherForecastArray = []
+  result.daily.data.forEach(element => {
+    weatherForecastArray.push({
+      time: element.time,
+      summary: element.summary,
+      temperatureMin: element.temperatureMin,
+      temperatureMax: element.temperatureMax
+    })
+  })
+
   return {
-    summary: result.currently.summary,
-    temperature: result.currently.temperature
+    result: {
+      time: result.currently.time,
+      summary: result.currently.summary,
+      temperature: result.currently.temperature
+    },
+    forecast: weatherForecastArray
   }
 }
 
