@@ -17,6 +17,7 @@ type Weather {
 type WeatherForecast {
   time: Int!
   summary: String!
+  icon: String!
   temperatureMin: Float!
   temperatureMax: Float!
 }

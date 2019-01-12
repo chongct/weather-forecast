@@ -1,10 +1,7 @@
+@import "variables";
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
 }
 
 .App-header {
@@ -22,11 +19,18 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+div.test-date {
+  color: $blue;
+}
+
+div.forecast-days {
+  height: 300px;
+
+  .weather-icons {
+    font-size: 1.5em;
   }
-  to {
-    transform: rotate(360deg);
+  
+  p:nth-of-type(2) {
+    font-size: 0.5em;
   }
 }

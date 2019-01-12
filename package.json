@@ -1,0 +1,12 @@
+{
+  "name": "weather-report",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"cd client && PORT=3000 yarn start\" \"cd server && nodemon --exec yarn start\""
+  },
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}

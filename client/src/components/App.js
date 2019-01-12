@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-// import logo from '../styles/logo.svg';
 import '../styles/App.scss';
 
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
 // import { Query } from 'react-apollo'
-import { withApollo } from 'react-apollo'
+import { withApollo } from 'react-apollo';
 
-import { Container, Row } from 'reactstrap'
+import { Container, Row } from 'reactstrap';
+import { library } from '@fortawesome/fontawesome-svg-core';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon } from '@fortawesome/free-solid-svg-icons';
 
-import Location from './Location'
-import ShowDate from './ShowDate'
-import Weather from './Weather'
+import Location from './Location';
+import ShowDate from './ShowDate';
+import Weather from './Weather';
 
 const API_QUERY = gql`
   query ApiQuery($field: String!) {
@@ -23,12 +25,15 @@ const API_QUERY = gql`
       forecast {
         time
         summary
+        icon
         temperatureMin
         temperatureMax
       }
     }
   }
 `
+
+library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon);
 
 class App extends Component {
   constructor() {
