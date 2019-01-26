@@ -10,6 +10,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon } from '@fortawesome/free-solid-svg-icons';
 
+import { connect } from "react-redux";
+import { addWeather } from "../js/actions/index";
+
 import Location from './Location';
 import ShowDate from './ShowDate';
 import Weather from './Weather';
@@ -35,13 +38,24 @@ const API_QUERY = gql`
 
 library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon);
 
+const mapStateToProps = state => {
+  return {
+    loading: state.loading,
+    weather: state.weather
+  };
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    addWeather: weather => dispatch(addWeather(weather))
+  };
+}
+
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      loading: null,
-      weather: {}
-    }
+      loading: false
+    };
   }
 
   componentDidMount = async () => {
@@ -51,29 +65,29 @@ class App extends Component {
     // const result = await response.json()
   }
 
-  _getWeather = async (location) => {
-    console.log(location)
-    this.setState({ loading: true })
+  getWeather = async (location) => {
+    // console.log(location);
+    this.setState({ loading: true });
     const result = await this.props.client.query({
       query: API_QUERY,
       variables: { field: location }
-    })
-    // console.log(result)
+    });
+    console.log(result);
     this.setState({
-      weather: result,
       loading: result.loading
-    })
+    });
+    this.props.addWeather(result);
   }
 
   render() {
-    // console.log(Object.keys(this.state.weather))
+    // console.log(this.props);
 
     return (
       <div className="App">
         <header className="App-header">
           <Container>
             <Row>
-              <Location getWeather={ this._getWeather }/>
+              <Location getWeather={ this.getWeather }/>
             </Row>
             <Row>
               <ShowDate />
@@ -82,8 +96,8 @@ class App extends Component {
               {this.state.loading && (
                 <p>loading....</p>
               )}
-              {Object.keys(this.state.weather).length > 0 && (
-                <Weather {...this.state.weather} />
+              {Object.keys(this.props.weather).length > 0 && (
+                <Weather {...this.props.weather} />
               )}
             </Row>
 
@@ -105,4 +119,4 @@ class App extends Component {
   }
 }
 
-export default withApollo(App);
+export default connect(mapStateToProps, mapDispatchToProps)(withApollo(App));
