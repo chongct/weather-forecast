@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "concurrently \"cd client && PORT=3000 yarn start\" \"cd server && nodemon --exec yarn start\""
+    "build": "cd client && yarn build",
+    "install": "(cd client && yarn install) && (cd server && yarn install)",
+    "dev": "concurrently \"cd client && PORT=3000 yarn start\" \"cd server && nodemon --exec yarn start\"",
+    "start": "cd server && yarn start",
+    "heroku-postbuild": "cd client && yarn install && yarn build"
   },
   "dependencies": {
     "concurrently": "^4.1.0"

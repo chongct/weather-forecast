@@ -31,7 +31,11 @@ async function apiQuery(parent, args, ctx, info) {
     result: {
       time: result.currently.time,
       summary: result.currently.summary,
-      temperature: result.currently.temperature
+      icon: result.currently.icon,
+      precipProbability: result.daily.data[0].precipProbability,
+      temperature: result.currently.temperature,
+      windSpeed: result.currently.windSpeed,
+      dailySummary: result.daily.data[0].summary
     },
     forecast: weatherForecastArray
   };

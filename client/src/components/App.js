@@ -23,7 +23,11 @@ const API_QUERY = gql`
       result {
         time
         summary
+        icon
+        precipProbability
         temperature
+        windSpeed
+        dailySummary
       }
       forecast {
         time

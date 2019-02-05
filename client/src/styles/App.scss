@@ -5,7 +5,7 @@
 }
 
 .App-header {
-  background-color: #FFFFFF;
+  background-color: $background;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,14 +23,19 @@ div.test-date {
   color: $blue;
 }
 
-div.forecast-days {
-  height: 300px;
-
-  .weather-icons {
-    font-size: 1.5em;
-  }
+div.forecast-group {
+  background-color: #FFFFFF;
+  padding: 10px 0px;
   
-  p:nth-of-type(2) {
-    font-size: 0.5em;
+  div.forecast-days {
+    height: 300px;
+
+    .weather-icons {
+      font-size: 1.5em;
+    }
+
+    p:nth-of-type(2) {
+      font-size: 0.5em;
+    }
   }
 }

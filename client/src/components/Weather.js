@@ -12,16 +12,12 @@ class Weather extends Component {
 
     return (
       <div>
+        <p>{ result.summary } now. { result.dailySummary }</p>
         <p>{ result.temperature }</p>
-        <p>{ result.summary }</p>
-        {/*<FontAwesomeIcon icon="cloud-sun" />
-        <FontAwesomeIcon icon="cloud-moon" />
-        <FontAwesomeIcon icon="cloud-rain" />
-        <FontAwesomeIcon icon="snowflake" />
-        <FontAwesomeIcon icon="wind" />
-        <FontAwesomeIcon icon="cloud" />*/}
+        <p>{ parseFloat(result.precipProbability)*100 }</p>
+        <p>{ result.windSpeed }</p>
 
-        <Row>
+        <Row className="forecast-group">
           { weatherForecast }
         </Row>
       </div>

@@ -11,7 +11,11 @@ type WeatherResult {
 type Weather {
   time: Int!
   summary: String!
+  icon: String!
+  precipProbability: Float!
   temperature: Float!
+  windSpeed: Float!
+  dailySummary: String!
 }
 
 type WeatherForecast {

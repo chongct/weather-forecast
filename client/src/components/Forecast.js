@@ -5,7 +5,7 @@ import { Col } from 'reactstrap';
 class Forecast extends Component {
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     let { time, summary, icon, temperatureMin, temperatureMax } = this.props.day;
     console.log(typeof temperatureMin);
     let date = new Date(time * 1000);
