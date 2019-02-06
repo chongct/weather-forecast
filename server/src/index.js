@@ -20,6 +20,7 @@ const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers
 });
+const port = process.env.PORT || 4000;
 
 // serve static files
 server.express.use(express.static(path.join(__dirname, "/../../client/build")));
@@ -27,4 +28,4 @@ server.express.use(express.static(path.join(__dirname, "/../../client/build")));
 server.express.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/../../client/build/index.html"));
 });
-server.start(() => console.log(`Server is running on http://localhost:4000`));
+server.start({port: port}, () => console.log(`Server is running on http://localhost:${port}`));

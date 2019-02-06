@@ -23,19 +23,63 @@ div.test-date {
   color: $blue;
 }
 
-div.forecast-group {
-  background-color: #FFFFFF;
-  padding: 10px 0px;
-  
-  div.forecast-days {
-    height: 300px;
+div.weather-input {
+  width: 350px;
 
-    .weather-icons {
-      font-size: 1.5em;
+  input {
+    border: none;
+    background-color: $background;
+    border-bottom: 2px solid $line;
+    border-radius: 0;
+  }
+
+  input.form-control:focus {
+    box-shadow: none;
+    border-bottom: 2px solid $line;
+  }
+
+  div.input-group-append {
+    position: absolute;
+    right: 0;
+  }
+
+  button {
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    z-index: 5 !important;
+
+    .fa-search {
+      color: $line;
     }
+  }
 
-    p:nth-of-type(2) {
-      font-size: 0.5em;
+  button:hover {
+    background-color: inherit;
+  }
+
+  button:focus {
+    box-shadow: none;
+  }
+}
+
+div.forecast {
+  color: $word;
+
+  div.forecast-group {
+    background-color: #FFFFFF;
+    padding: 10px 0px;
+
+    div.forecast-days {
+      height: 300px;
+
+      .weather-icons {
+        font-size: 1.5em;
+      }
+
+      p:nth-of-type(2) {
+        font-size: 0.5em;
+      }
     }
   }
 }

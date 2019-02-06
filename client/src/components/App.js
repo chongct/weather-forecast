@@ -8,7 +8,7 @@ import { withApollo } from 'react-apollo';
 import { Container, Row } from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { connect } from "react-redux";
 import { addWeather } from "../js/actions/index";
@@ -40,7 +40,7 @@ const API_QUERY = gql`
   }
 `
 
-library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon);
+library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch);
 
 const mapStateToProps = state => {
   return {
@@ -90,13 +90,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Container>
-            <Row>
+            <Row className="justify-content-center mt-4">
               <Location getWeather={ this.getWeather }/>
             </Row>
-            <Row>
+            <Row className="justify-content-center mt-4">
               <ShowDate />
             </Row>
-            <Row>
+            <Row className="forecast">
               {this.state.loading && (
                 <p>loading....</p>
               )}

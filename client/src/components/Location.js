@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { InputGroup, Input, InputGroupAddon, Button } from 'reactstrap'
+import { InputGroup, Input, InputGroupAddon, Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Location extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       location: ""
-    }
+    };
   }
 
   render() {
     return (
       <div>
-        <InputGroup>
+        <InputGroup className="weather-input">
           <Input onChange={(e) => this.setState({ location: e.target.value })} />
           <InputGroupAddon addonType="append">
-            <Button color="secondary" onClick={() => this.props.getWeather(this.state.location)}>Get weather</Button>
+            <Button onClick={() => this.props.getWeather(this.state.location)}><FontAwesomeIcon icon="search" /></Button>
           </InputGroupAddon>
         </InputGroup>
       </div>

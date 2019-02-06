@@ -52,10 +52,10 @@ function latLngApi(field) {
     .send()
     .then(response => {
       const match = response.body;
-      console.log(match.features[1]);
+      // console.log(match.features[0]);
       resolve({
-        lat: match.features[1].center[1],
-        lng: match.features[1].center[0]
+        lat: match.features[0].center[1],
+        lng: match.features[0].center[0]
       });
     });
   });
@@ -63,5 +63,6 @@ function latLngApi(field) {
 
 module.exports = {
   info,
-  apiQuery
+  apiQuery,
+  latLngApi
 }
