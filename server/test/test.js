@@ -4,6 +4,7 @@ const path = require('path');
 const dotEnvPath = path.resolve('./.env');
 require('dotenv').config({ path: dotEnvPath });
 const queryTest = require('../src/resolvers/Query');
+const helperTest = require('../src/helpers/latLngApi');
 
 const expect = chai.expect;
 
@@ -18,7 +19,7 @@ describe("Sample test", function() {
 
 describe("Latitude longitude API test", function() {
   it("should perform a Latitude longitude API call given a location", async function() {
-    const data = await queryTest.latLngApi("singapore");
+    const data = await helperTest.latLngApi("singapore");
     expect(data).to.be.an("object");
     expect(data).to.have.property("lat");
     expect(data).to.have.property("lng");
