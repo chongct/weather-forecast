@@ -1,4 +1,4 @@
-# Weather Forecast Application [![Build Status](https://travis-ci.org/chongct/weather-forecast.png?branch=master)](https://travis-ci.org/chongct/weather-forecast)
+# Weather Forecast Application [![Build Status](https://travis-ci.com/chongct/weather-forecast.svg?branch=master)](https://travis-ci.com/chongct/weather-forecast)
 
 This is a simple weather forecast application.
 
