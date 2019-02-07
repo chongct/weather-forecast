@@ -25,5 +25,6 @@ yarn-error.log*
 node_modules
 
 server/node_modules
-server/.env
+.env
 server/.nyc_output
+server/coverage.lcov

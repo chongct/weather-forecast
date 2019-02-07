@@ -18,7 +18,7 @@ import { Provider } from "react-redux";
 import store from "./js/store/index";
 
 const httpLink = new createHttpLink({
-  uri: 'http://localhost:4000'
+  uri: process.env.REACT_APP_URI
 });
 
 const client = new ApolloClient({
