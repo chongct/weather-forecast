@@ -8,7 +8,8 @@
     "install": "(cd client && yarn install) && (cd server && yarn install)",
     "dev": "concurrently \"cd client && PORT=3000 yarn start\" \"cd server && nodemon --exec yarn start\"",
     "start": "cd server && yarn start",
-    "heroku-postbuild": "cd client && yarn install && yarn build"
+    "heroku-postbuild": "cd client && yarn install && yarn build",
+    "test": "cd server && yarn test"
   },
   "dependencies": {
     "concurrently": "^4.1.0"

@@ -12,7 +12,7 @@ function latLngApi(field) {
     .send()
     .then(response => {
       const match = response.body;
-      // console.log(match.features[0]);
+      console.log(match.features[0]);
       resolve({
         lat: match.features[0].center[1],
         lng: match.features[0].center[0]

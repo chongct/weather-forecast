@@ -27,4 +27,5 @@ server.express.use(express.static(path.join(__dirname, "/../../client/build")));
 server.express.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/../../client/build/index.html"));
 });
+// graphql server starts on port 4000 by default, needs this
 server.start(() => console.log(`Server is running on http://localhost:4000`));
