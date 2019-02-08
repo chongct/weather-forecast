@@ -1,5 +1,12 @@
 language: node_js
 node_js:
- - "node"
+- node
 after_success:
- - yarn coverage
+- yarn coverage
+deploy:
+  provider: heroku
+  api_key:
+    secure: RovojALA48WTiS7HR4hAwb7p2BPSfXvHO4TNQjUav2MB8tYv94XMsoC0hOCu6RI/fCWxoF4w5jp86VSe9bBIMBz3Nh/EKvuH04Z8AVeXFJD+YYVZUDHgLYMkOOpqN0WvT0oJPFchpIulL9sw3eLf86236yFRmtADCppo4EnM7ghT6PIpWHIEIoXcKhcqDLIvRC7cN0Xrrjpqqd0r2/bXM9ox6/eH05fi52OF4sD6TxG/EbC1oU8krZJ0lx5H1XMI7w/fQg/2i5YeyDsXy/ZauaUqqqBws9yDERT4P7c+dZOkvyXSbMzpTSrrxIgEogJAm8s5bcWVa9VFphbGyB17XtxEMPcWdyjDCN0gxT6uun7VUhO5y3bRdOWvhheyfikeS2fCjS/6yTMYS8V3Xa5RVr+rSR+khSGCDq+qRL4OyIO/haO42Tym/pswYUQlIALCckvVvOohIUIcdiP/XVuaMWn19J+Ev0scuvi/DR/1dg2lWDURncyCCh8kbiqGMQPlRQ2iNg/IY+ij1AZLDzivyWmplXdE6kKyvmFbEtjQlL9ddck6ZnIaJywVPBhPsSGgJZrqEePSFKtkQ+1RoALL6sJzAZA8I8+0LB8xuFLLpiSrOpZcXyKDlENvjQC11JzMws0u8Xov9xEbJnrTV7tV7rp+YbANw6DWj5gPrTNRDJ4=
+  app: chongct-weather
+  on:
+    repo: chongct/weather-forecast
