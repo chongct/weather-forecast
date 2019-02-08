@@ -38,6 +38,8 @@ class Forecast extends Component {
       case "partly-cloudy-night":
         iconResult = "cloud-moon";
         break;
+      default:
+        iconResult = "not found";
     }
 
     return (
