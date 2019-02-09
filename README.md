@@ -13,3 +13,4 @@ Live version: https://chongct-weather.herokuapp.com/
 * Mapbox API
 * Mocha, Chai
 * Travis CI
+* Heroku

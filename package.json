@@ -10,13 +10,15 @@
     "start": "cd server && yarn start",
     "heroku-postbuild": "cd client && yarn install && yarn build",
     "test": "(cd server && yarn test) && (cd client && yarn test)",
-    "coverage": "cd server && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "gulp coverage"
   },
   "dependencies": {
     "concurrently": "^4.1.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
+    "gulp": "^4.0.0",
+    "gulp-coveralls": "^0.1.4",
     "nyc": "^13.2.0"
   }
 }
