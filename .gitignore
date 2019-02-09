@@ -27,4 +27,4 @@ node_modules
 server/node_modules
 server/.env
 server/.nyc_output
-server/coverage.lcov
+server/coverage
