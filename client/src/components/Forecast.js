@@ -7,7 +7,6 @@ class Forecast extends Component {
   render() {
     // console.log(this.props);
     let { time, summary, icon, temperatureMin, temperatureMax } = this.props.day;
-    console.log(typeof temperatureMin);
     let date = new Date(time * 1000);
     const dayOfWeekArray = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
     let dayOfWeek = dayOfWeekArray[date.getDay()];

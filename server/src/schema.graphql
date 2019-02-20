@@ -15,6 +15,7 @@ type Weather {
   precipProbability: Float!
   temperature: Float!
   windSpeed: Float!
+  windBearing: Float!
   dailySummary: String!
 }
 

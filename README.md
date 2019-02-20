@@ -6,6 +6,7 @@ Live version: https://chongct-weather.herokuapp.com/
 
 ## Built With
 * React / Redux
+* SCSS
 * Bootstrap
 * GraphQL
 * Node.js
@@ -14,3 +15,4 @@ Live version: https://chongct-weather.herokuapp.com/
 * Mocha, Chai
 * Travis CI
 * Heroku
+* Gulp

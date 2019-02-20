@@ -8,7 +8,7 @@ import { withApollo } from 'react-apollo';
 import { Container, Row } from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 import { connect } from "react-redux";
 import { addWeather } from "../js/actions/index";
@@ -27,6 +27,7 @@ const API_QUERY = gql`
         precipProbability
         temperature
         windSpeed
+        windBearing
         dailySummary
       }
       forecast {
@@ -40,7 +41,7 @@ const API_QUERY = gql`
   }
 `
 
-library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch);
+library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow);
 
 const mapStateToProps = state => {
   return {
@@ -91,6 +92,9 @@ class App extends Component {
         <header className="App-header">
           <Container>
             <Row className="justify-content-center mt-4">
+              <h4>Weather Forecast</h4>
+            </Row>
+            <Row className="justify-content-center mt-2">
               <Location getWeather={ this.getWeather }/>
             </Row>
             <Row className="justify-content-center mt-4">
