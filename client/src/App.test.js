@@ -72,6 +72,20 @@ describe("Test Weather component", () => {
       }
     }
   };
+  let unknownWeatherData = {
+    data: {
+      apiQuery: {
+        result: {
+          time: 1550000000,
+          icon: "unknown"
+        },
+        forecast: [{
+          time: 1551000000,
+          icon: "unknown"
+        }]
+      }
+    }
+  };
   it("Weather component renders without crashing", () => {
     const wrapper = shallow(<Weather {...weatherData} />);
     expect(wrapper.exists()).toEqual(true);
@@ -79,7 +93,11 @@ describe("Test Weather component", () => {
 
   it("Weather component shows right weather icon", () => {
     const wrapper = mount(<Weather {...weatherData} />);
-    console.log(wrapper.html());
     expect(wrapper.find("svg.weather-icons").first().prop("data-icon")).toEqual("sun");
+  });
+
+  it("Weather component defaults to unknown weather icon", () => {
+    const wrapper = mount(<Weather {...unknownWeatherData} />);
+    expect(wrapper.find("svg.weather-icons").first().prop("data-icon")).toEqual("question");
   });
 });

@@ -37,7 +37,7 @@ class Weather extends Component {
         iconResult = "cloud-moon";
         break;
       default:
-        iconResult = "not found";
+        iconResult = "question";
     }
     if (document.querySelector(".location-icon")) {
       document.querySelector(".location-icon").style.transform = `rotate(${(-45 + result.windBearing)}deg)`;

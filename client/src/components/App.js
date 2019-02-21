@@ -8,7 +8,7 @@ import { withApollo } from 'react-apollo';
 import { Container, Row } from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 import { connect } from "react-redux";
 import { addWeather } from "../js/actions/index";
@@ -41,7 +41,7 @@ const API_QUERY = gql`
   }
 `
 
-library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow);
+library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow, faQuestion);
 
 const mapStateToProps = state => {
   return {

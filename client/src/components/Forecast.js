@@ -38,7 +38,7 @@ class Forecast extends Component {
         iconResult = "cloud-moon";
         break;
       default:
-        iconResult = "not found";
+        iconResult = "question";
     }
 
     return (
