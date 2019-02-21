@@ -13,6 +13,35 @@ import sinon from 'sinon';
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
+export let weatherData = {
+  data: {
+    apiQuery: {
+      result: {
+        time: 1550000000,
+        icon: "clear-day"
+      },
+      forecast: [{
+        time: 1551000000,
+        icon: "clear-day"
+      }]
+    }
+  }
+};
+let unknownWeatherData = {
+  data: {
+    apiQuery: {
+      result: {
+        time: 1550000000,
+        icon: "unknown"
+      },
+      forecast: [{
+        time: 1551000000,
+        icon: "unknown"
+      }]
+    }
+  }
+};
+
 describe("Test App component", () => {
   it("App component renders without crashing", () => {
     const wrapper = shallow(<App />);
@@ -58,34 +87,6 @@ describe("Test ShowDate component", () => {
 });
 
 describe("Test Weather component", () => {
-  let weatherData = {
-    data: {
-      apiQuery: {
-        result: {
-          time: 1550000000,
-          icon: "clear-day"
-        },
-        forecast: [{
-          time: 1551000000,
-          icon: "clear-day"
-        }]
-      }
-    }
-  };
-  let unknownWeatherData = {
-    data: {
-      apiQuery: {
-        result: {
-          time: 1550000000,
-          icon: "unknown"
-        },
-        forecast: [{
-          time: 1551000000,
-          icon: "unknown"
-        }]
-      }
-    }
-  };
   it("Weather component renders without crashing", () => {
     const wrapper = shallow(<Weather {...weatherData} />);
     expect(wrapper.exists()).toEqual(true);

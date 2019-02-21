@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 class Forecast extends Component {
 
@@ -43,10 +43,21 @@ class Forecast extends Component {
 
     return (
       <Col sm="2" className="forecast-days d-flex flex-column align-items-center justify-content-between">
-        <p>{ dayOfWeek } {displayDate}</p>
-        <FontAwesomeIcon icon={iconResult} className="weather-icons"/>
-        <p>{ summary }</p>
-        <p>{ Math.round(temperatureMax) }&#8451; / { Math.round(temperatureMin) }&#8451;</p>
+        <Row>
+          <p>{ dayOfWeek } {displayDate}</p>
+        </Row>
+        <Row>
+          <Col sm="6" className="d-flex align-items-center">
+            <FontAwesomeIcon icon={iconResult} className="weather-icons"/>
+          </Col>
+          <Col sm="6">
+            <p className="no-bot-margin">{ Math.round(temperatureMax) }&#8451;</p>
+            <p className="no-bot-margin">{ Math.round(temperatureMin) }&#8451;</p>
+          </Col>
+        </Row>
+        <Row>
+          <p>{ summary }</p>
+        </Row>
       </Col>
     );
   }
