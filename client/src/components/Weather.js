@@ -50,7 +50,7 @@ class Weather extends Component {
         </Row>
         <Row>
           <Col sm="4"><p><FontAwesomeIcon icon={iconResult} className="weather-icons mr-4"/>{ Math.round(result.temperature) }&#8451;</p></Col>
-          <Col sm="4"><p><FontAwesomeIcon icon="tint" className="mr-4"/>{ parseFloat(result.precipProbability)*100 }%</p></Col>
+          <Col sm="4"><p><FontAwesomeIcon icon="tint" className="mr-4"/>{ Math.round(parseFloat(result.precipProbability)*100) }%</p></Col>
           <Col sm="4"><p><FontAwesomeIcon icon="location-arrow" className="location-icon mr-4"/>{ result.windSpeed } m/s</p></Col>
         </Row>
 

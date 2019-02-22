@@ -1,4 +1,4 @@
-# Weather Forecast Application [![Build Status](https://travis-ci.com/chongct/weather-forecast.svg?branch=master)](https://travis-ci.com/chongct/weather-forecast) [![Coverage Status](https://coveralls.io/repos/github/chongct/weather-forecast/badge.svg?branch=master)](https://coveralls.io/github/chongct/weather-forecast?branch=master)[![HitCount](http://hits.dwyl.io/chongct/weather-forecast.svg)](http://hits.dwyl.io/chongct/weather-forecast)
+# Weather Forecast Application [![Build Status](https://travis-ci.com/chongct/weather-forecast.svg?branch=master)](https://travis-ci.com/chongct/weather-forecast) [![Coverage Status](https://coveralls.io/repos/github/chongct/weather-forecast/badge.svg?branch=master)](https://coveralls.io/github/chongct/weather-forecast?branch=master) [![HitCount](http://hits.dwyl.io/chongct/weather-forecast.svg)](http://hits.dwyl.io/chongct/weather-forecast)
 
 This is a simple weather forecast application.
 
