@@ -28,3 +28,4 @@ server/node_modules
 server/.env
 server/.nyc_output
 server/coverage
+coverage
