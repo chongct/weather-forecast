@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import Location from './components/Location';
+import { Location } from './components/Location';
 import ShowDate from './components/ShowDate';
 import Weather from './components/Weather';
 import { shallow, mount } from 'enzyme';
@@ -58,22 +58,29 @@ describe("Test Location component", () => {
   });
 
   it("Simulate input change", () => {
-    const onInputChange = sinon.spy();
-    const wrapper = shallow(<Location onInputChange={onInputChange} />);
+    const props = {
+      onInputChange: sinon.spy(),
+      addLocation: jest.fn()
+    };
+    const wrapper = shallow(<Location {...props} />);
+    expect(props.addLocation.mock.calls.length).toBe(0);
     wrapper.find("Input").simulate("change", {
       target: {
         value: "Singapore"
       }
     });
-    expect(wrapper.state("location")).toEqual("Singapore");
+    expect(props.addLocation.mock.calls.length).toBe(1);
   });
 
   it("Simulate button click", () => {
-    const onButtonClick = sinon.spy();
-    const getWeatherMock = jest.fn();
-    const wrapper = shallow(<Location onButtonClick={onButtonClick} getWeather={getWeatherMock} />);
+    const props = {
+      onButtonClick: sinon.spy(),
+      getWeather: jest.fn()
+    };
+    const wrapper = shallow(<Location {...props} />);
+    expect(props.getWeather).toHaveBeenCalledTimes(0);
     wrapper.find("Button").simulate("click");
-    expect(getWeatherMock).toHaveBeenCalledTimes(1);
+    expect(props.getWeather).toHaveBeenCalledTimes(1);
   })
 });
 

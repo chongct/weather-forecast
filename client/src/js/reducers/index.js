@@ -1,16 +1,34 @@
-import { ADD_WEATHER } from "../constants/actionTypes";
+import { ADD_WEATHER, ADD_LOCATION } from "../constants/actionTypes";
+import { combineReducers } from "redux";
 
-const initialState = {
+const weatherInitialState = {
   weather: {}
 };
+const locationInitialState = {
+  location: ""
+};
 
-function rootReducer(state = initialState, action) {
+const weatherReducer = (state = weatherInitialState, action) => {
   if (action.type === ADD_WEATHER) {
-    return Object.assign({}, state, {
-      weather: action.payload
-    });
+    return action.payload;
+    // return Object.assign({}, state, {
+    //   weather: action.payload
+    // });
   }
   return state;
 };
+const locationReducer = (state = locationInitialState, action) => {
+  switch(action.type) {
+    case ADD_LOCATION:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+const rootReducer = combineReducers({
+  weather: weatherReducer,
+  location: locationReducer
+});
 
 export default rootReducer;

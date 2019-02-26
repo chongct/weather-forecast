@@ -12,12 +12,24 @@ describe("Redux actions test", () => {
     };
     expect(actions.addWeather(weatherData)).toEqual(expectedAction);
   });
+
+  it("should create an action to add a location search", () => {
+    let payload = {
+      location: "Singapore"
+    };
+    const expectedAction = {
+      type: types.ADD_LOCATION,
+      payload
+    };
+    expect(actions.addLocation(payload)).toEqual(expectedAction);
+  });
 });
 
 describe("Redux reducers test", () => {
   it("should return the initial state", () => {
     expect(reducer(undefined, {})).toEqual({
-      weather: {}
+      location: { location: "" },
+      weather: { weather: {} }
     });
   });
 
@@ -26,7 +38,20 @@ describe("Redux reducers test", () => {
       type: types.ADD_WEATHER,
       payload: weatherData
     })).toEqual({
-      weather: weatherData
+      weather: weatherData,
+      location: { location: "" }
+    });
+  });
+
+  it("should handle ADD_LOCATION", () => {
+    expect(reducer(undefined, {
+      type: types.ADD_LOCATION,
+      payload: {
+        location: "Singapore"
+      }
+    })).toEqual({
+      weather: { weather: {} },
+      location: { location: "Singapore" }
     });
   });
 });

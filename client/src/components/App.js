@@ -44,16 +44,13 @@ const API_QUERY = gql`
 library.add(faSun, faMoon, faCloudRain, faSnowflake, faWind, faCloud, faCloudSun, faCloudMoon, faSearch, faTint, faLocationArrow, faQuestion);
 
 const mapStateToProps = state => {
-  return {
-    loading: state.loading,
-    weather: state.weather
-  };
-}
+  return state.weather;
+};
 const mapDispatchToProps = dispatch => {
   return {
     addWeather: weather => dispatch(addWeather(weather))
   };
-}
+};
 
 class App extends Component {
   constructor() {
@@ -81,7 +78,7 @@ class App extends Component {
     this.setState({
       loading: result.loading
     });
-    this.props.addWeather(result);
+    this.props.addWeather({ weather: result });
   }
 
   render() {
