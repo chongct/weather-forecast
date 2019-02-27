@@ -18,6 +18,10 @@ Live version: https://chongct-weather.herokuapp.com/
 * Run ```docker run -p 4000:4000 --env-file <path/to/.env file> <image name>``` to start running Docker image.
 * Application can be accessed at <http://localhost:4000>.
 
+### Environmental Variables
+* Two API keys, one from [Dark Sky API](https://darksky.net/dev) and one from [Mapbox API](https://www.mapbox.com/), are needed for the application.
+* Configure them in ```server/.env``` with variable names ```WEATHER_API_KEY``` and ```LATLNG_API_KEY```.
+
 ## Built With
 * React / Redux
 * SCSS

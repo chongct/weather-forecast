@@ -3,42 +3,15 @@ import { Row, Col } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Forecast from './Forecast';
+import iconKeyword from '../helpers/iconKeyword';
 
 class Weather extends Component {
   render() {
     // console.log(this.props);
     let { result, forecast } = this.props.data.apiQuery;
     let weatherForecast = forecast.map(day => <Forecast day={day} key={day.time}/>);
+    let iconResult = iconKeyword(result.icon);
 
-    let iconResult;
-    switch (result.icon) {
-      case "clear-day":
-        iconResult = "sun";
-        break;
-      case "clear-night":
-        iconResult = "moon";
-        break;
-      case "rain":
-        iconResult = "cloud-rain";
-        break;
-      case "snow":
-        iconResult = "snowflake";
-        break;
-      case "wind":
-        iconResult = "wind";
-        break;
-      case "cloudy":
-        iconResult = "cloud";
-        break;
-      case "partly-cloudy-day":
-        iconResult = "cloud-sun";
-        break;
-      case "partly-cloudy-night":
-        iconResult = "cloud-moon";
-        break;
-      default:
-        iconResult = "question";
-    }
     if (document.querySelector(".location-icon")) {
       document.querySelector(".location-icon").style.transform = `rotate(${(-45 + result.windBearing)}deg)`;
     }

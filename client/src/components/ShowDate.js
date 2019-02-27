@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class ShowDate extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       date: null,
       month: null,

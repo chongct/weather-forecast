@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row, Col } from 'reactstrap';
 
+import iconKeyword from '../helpers/iconKeyword';
+
 class Forecast extends Component {
 
   render() {
@@ -11,35 +13,7 @@ class Forecast extends Component {
     const dayOfWeekArray = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
     let dayOfWeek = dayOfWeekArray[date.getDay()];
     let displayDate = `${date.getDate()}/${date.getMonth() + 1}`;
-    let iconResult;
-    switch (icon) {
-      case "clear-day":
-        iconResult = "sun";
-        break;
-      case "clear-night":
-        iconResult = "moon";
-        break;
-      case "rain":
-        iconResult = "cloud-rain";
-        break;
-      case "snow":
-        iconResult = "snowflake";
-        break;
-      case "wind":
-        iconResult = "wind";
-        break;
-      case "cloudy":
-        iconResult = "cloud";
-        break;
-      case "partly-cloudy-day":
-        iconResult = "cloud-sun";
-        break;
-      case "partly-cloudy-night":
-        iconResult = "cloud-moon";
-        break;
-      default:
-        iconResult = "question";
-    }
+    let iconResult = iconKeyword(icon);
 
     return (
       <Col sm="2" className="forecast-days d-flex flex-column align-items-center justify-content-between">
